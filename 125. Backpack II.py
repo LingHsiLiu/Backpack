@@ -17,3 +17,13 @@ class Solution:
                 else:
                     dp[i][j] = max(dp[i - 1][j], dp[i -1][j - A[i - 1]] + V[i - 1])
         return dp[len(A)][m]
+
+# Another method
+#         f = [0 for i in xrange(m+1)]
+#         print(f)
+#         n = len(A)
+#         for i in range(n):
+#             for j in xrange(m, A[i]-1, -1):
+#                 f[j] = max(f[j] , f[j-A[i]] + V[i])
+#                 print(f)
+#         return f[m]
